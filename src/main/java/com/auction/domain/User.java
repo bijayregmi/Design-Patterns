@@ -1,11 +1,12 @@
 package com.auction.domain;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.springframework.web.multipart.MultipartFile;
-
+@Entity
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,7 +21,7 @@ public class User {
 	private String state;
 	private String zip;
 	private String country;
-	private MultipartFile picture;
+//	private MultipartFile picture;
 	public long getUserId() {
 		return userId;
 	}
@@ -87,11 +88,11 @@ public class User {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public MultipartFile getPicture() {
-		return picture;
-	}
-	public void setPicture(MultipartFile picture) {
-		this.picture = picture;
-	}
+//	public MultipartFile getPicture() {
+//		return picture;
+//	}
+//	public void setPicture(MultipartFile picture) {
+//		this.picture = picture;
+//	}
 
 }

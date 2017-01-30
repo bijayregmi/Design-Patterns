@@ -2,17 +2,28 @@ package com.auction.domain;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.ManyToAny;
+@Entity
 public class Bidding {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long biddingId;
-	private long assetId;
-	private long userId; //buyer
+	@ManyToOne(fetch=FetchType.LAZY)	
+	@JoinColumn(name="assetsid")
+	private Assets assetId;
+	@OneToOne
+	@JoinColumn(name="userId")
+	private User userId; //buyer
 	private long bidPurposedAmount;
 	private Date bidTimeStamp;
 	public long getBiddingId() {
@@ -21,16 +32,17 @@ public class Bidding {
 	public void setBiddingId(long biddingId) {
 		this.biddingId = biddingId;
 	}
-	public long getAssetId() {
+	
+	public Assets getAssetId() {
 		return assetId;
 	}
-	public void setAssetId(long assetId) {
+	public void setAssetId(Assets assetId) {
 		this.assetId = assetId;
 	}
-	public long getUserId() {
+	public User getUserId() {
 		return userId;
 	}
-	public void setUserId(long userId) {
+	public void setUserId(User userId) {
 		this.userId = userId;
 	}
 	public long getBidPurposedAmount() {
