@@ -20,7 +20,7 @@ public class Bidding {
 	private long biddingId;
 	@ManyToOne(fetch=FetchType.LAZY)	
 	@JoinColumn(name="assetsid")
-	private Assets assetId;
+	private Asset assetId;
 	@OneToOne
 	@JoinColumn(name="userId")
 	private User userId; //buyer
@@ -33,10 +33,10 @@ public class Bidding {
 		this.biddingId = biddingId;
 	}
 	
-	public Assets getAssetId() {
+	public Asset getAssetId() {
 		return assetId;
 	}
-	public void setAssetId(Assets assetId) {
+	public void setAssetId(Asset assetId) {
 		this.assetId = assetId;
 	}
 	public User getUserId() {

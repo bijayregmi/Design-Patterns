@@ -23,7 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.auction.enums.Role;
 import com.auction.enums.Status;
 @Entity
-public class Assets {
+public class Asset {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long assetId;
