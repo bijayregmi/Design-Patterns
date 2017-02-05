@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HomeController {
-	@RequestMapping(value="/")
+	@RequestMapping(value="/admin")
 	public String showHome(){
 		return "logintheme";
 	}
-	@RequestMapping(value="/login",method=RequestMethod.POST)
+	@RequestMapping(value="/loginadmin",method=RequestMethod.POST)
 	public String showDashboard(){
 		System.out.println("aaaa");
 		return "dashboard";
