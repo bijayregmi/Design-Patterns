@@ -28,11 +28,11 @@ public class Asset {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long assetId;
 	@ManyToOne(fetch=FetchType.LAZY,cascade=CascadeType.ALL)
-	@JoinColumn(name="category")
-	private Category categoryId;
+	@JoinColumn(name="category_id")
+	private Category category;
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="userid")
-	private User userId;
+	@JoinColumn(name="user_id")
+	private User user;
 	
 	private String name;
 	private String model;
@@ -60,17 +60,19 @@ public class Asset {
 		this.assetId = assetId;
 	}
 	
-	public Category getCategoryId() {
-		return categoryId;
+	
+	public Category getCategory() {
+		return category;
 	}
-	public void setCategoryId(Category categoryId) {
-		this.categoryId = categoryId;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
-	public User getUserId() {
-		return userId;
+	
+	public User getUser() {
+		return user;
 	}
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public String getName() {
 		return name;
