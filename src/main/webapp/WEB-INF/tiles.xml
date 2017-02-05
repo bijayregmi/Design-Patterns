@@ -11,10 +11,37 @@
 		<put-attribute name="content" value=""  />
 		<put-attribute name="pagescript" value="/WEB-INF/views/pagescript.jsp" cascade="true" />
 	</definition>
-	
+	<!--  admin  tiles starts -->
 	<definition name="dashboard" extends="base.definition">  
         <put-attribute name="title" value="Dashboard" />  
         <put-attribute name="content" value="/WEB-INF/views/maincontent.jsp"/>  
-    </definition> 
+    </definition>
+    
+   <!--  <definition name="dashboard" extends="base.definition">  
+        <put-attribute name="title" value="Dashboard" />  
+        <put-attribute name="content" value="/WEB-INF/views/maincontent.jsp"/>  
+    </definition> -->
+    
+    <!--  admin tiles end -->
+    
+    <definition name="frontbase.definition" template="/WEB-INF/views/frontend/frontendtemplate.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="resources" value="/WEB-INF/views/frontend/resources.jsp" cascade="true" />
+		<put-attribute name="header" value="/WEB-INF/views/frontend/frontendheader.jsp" cascade="true" />
+		<put-attribute name="content" value=""  />
+		<put-attribute name="footer" value="/WEB-INF/views/frontend/footer.jsp" cascade="true" />
+	</definition>
+	
+	<definition name="home" extends="frontbase.definition">  
+        <put-attribute name="title" value="Dashboard" />  
+        <put-attribute name="content" value="/WEB-INF/views/frontend/content.jsp"/>  
+    </definition>
+    
+    <!-- <definition name="productdetail" extends="frontbase.definition">  
+        <put-attribute name="title" value="Dashboard" />  
+        <put-attribute name="content" value="/WEB-INF/views/frontend/productdetail.jsp"/>  
+    </definition> -->
+    
+   
     
 </tiles-definitions>
